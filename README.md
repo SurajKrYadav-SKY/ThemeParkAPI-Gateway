@@ -1,4 +1,4 @@
-# FRONTEND - MIDDLE_END - BACKEND
+## FRONTEND - MIDDLE_END - BACKEND
 
 - This MIDDLE_END is actually the api-gateway
 
@@ -7,7 +7,7 @@
 - Here we can do message validation, response transformation, rate limiting, etc
 - We try to prepare an API Gateway that acts as this middle end.
 
-# What does rate-limiting do?
+## What does rate-limiting do?
 
 - If someone is trying to bombard a lot of request to our backend services, then I cannot implement same logic again and again in every service that if a perticular IP is sending a lot of request, just block the IP for for few minutes or according to the requirement.
 
@@ -17,11 +17,11 @@
 
 - But using middle end i.e Api gateway, we can connect to the authentication logic/service saperately, get the response and using this response, we can call the microservices.
 
-# It will also act as a reverse proxy
+## It will also act as a reverse proxy
 
 - A reverse proxy is a server that acts as an intermediary between a user's browser and a web server. It intercepts and forwards requests from the user to the web server.
 
-# How does it work?
+## How does it work?
 
 - A reverse proxy is placed at the edge of a network.
 - It receives requests from a user's browser.
@@ -29,7 +29,7 @@
 - It forwards the requests to the web server.
 - It returns the response from the web server to the user.
 
-# Why is it used?
+## Why is it used?
 
 - To improve security and performance
 - To provide a public access point and DNS
@@ -37,4 +37,4 @@
 - To protect web servers from attacks
 - To handle multiple requests for the same site
 
-# Loging mechanism will also be implemented here which will log all the incomming request.
+## Loging mechanism will also be implemented here which will log all the incomming request.
