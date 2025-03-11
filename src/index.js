@@ -2,6 +2,8 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const { PORT } = require("./config/serverConfig");
 const morgan = require("morgan");
+const { createProxyMiddleware } = require("http-proxy-middleware");
+const { BOOKING_SERVICE } = require("./config/serverConfig");
 
 const setupAndStartServer = async () => {
   const app = express();
@@ -10,6 +12,13 @@ const setupAndStartServer = async () => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.use(morgan("combined"));
+
+  const proxyMiddleware = createProxyMiddleware({
+    target: BOOKING_SERVICE,
+    changeOrigin: true,
+  });
+
+  app.use("/bookingservice", proxyMiddleware);
 
   app.get("/api/home", (req, res) => {
     return res.json({
